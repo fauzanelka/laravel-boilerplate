@@ -1,0 +1,66 @@
+<?php
+
+namespace DummyNamespace;
+
+class DummyClass
+{
+    /**
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public function all()
+    {
+        //
+    }
+
+    /**
+     * @param int $id
+     * @throws \Throwable
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function find(int $id)
+    {
+        //
+    }
+
+    /**
+     * @param string $column
+     * @param mixed $value
+     * @throws \Throwable
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function findBy(string $column, mixed $value)
+    {
+        //
+    }
+
+    /**
+     * @param mixed $data
+     * @throws \Throwable
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function create(mixed $data)
+    {
+        //
+    }
+
+    /**
+     * @param int $id
+     * @throws \Throwable
+     * @return bool
+     */
+    public function delete(int $id)
+    {
+        //
+    }
+
+    /**
+     * @param int $id
+     * @param mixed $data
+     * @throws \Throwable
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function update(int $id, mixed $data)
+    {
+        //
+    }
+}
