@@ -26,6 +26,7 @@
         "laravel/tinker": "^2.5",
         "spatie/data-transfer-object": "^2.8",
         "spatie/laravel-json-api-paginate": "^1.10",
+        "spatie/laravel-permission": "^4.0",
         "spatie/laravel-query-builder": "^3.3",
         "tymon/jwt-auth": "^1.0"
     },
