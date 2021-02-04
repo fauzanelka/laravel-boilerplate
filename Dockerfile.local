@@ -1,0 +1,12 @@
+FROM richarvey/nginx-php-fpm:1.10.3
+
+LABEL maintainer="hello@fauzanelka.id"
+
+ENV WEBROOT /var/www/html/src
+
+RUN pecl channel-update pecl.php.net
+RUN apk add --update --no-cache $PHPIZE_DEPS
+RUN pecl install xdebug && \
+    docker-php-ext-enable xdebug
+
+ENV ENABLE_XDEBUG 1

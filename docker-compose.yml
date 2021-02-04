@@ -1,0 +1,42 @@
+# For development only!
+version: "3.7"
+services:
+  app_db:
+    image: mariadb:10.5
+    environment:
+      MYSQL_ROOT_PASSWORD: mUPjqIiVbTIRAw9b # openssl rand -base64 12
+    volumes:
+      - type: volume
+        source: mariadb
+        target: /var/lib/mysql
+    networks:
+      - default
+  app_web:
+    image: fauzanelka/laravel-boilerplate:local
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    depends_on:
+      - app_db
+    working_dir: /var/www/html/src
+    environment:
+      XDEBUG_MODE: debug
+      XDEBUG_CONFIG: "client_host=host.docker.internal"
+    volumes:
+      - type: bind
+        source: ./config/nginx
+        target: /var/www/html/conf/nginx
+      - type: bind
+        source: ./config/supervisord/laravel-worker.conf
+        target: /etc/supervisor/conf.d/laravel-worker.conf
+      - type: bind
+        source: .
+        target: /var/www/html/src
+    ports:
+      - 8000:80
+    networks:
+      - default
+volumes:
+  mariadb:
+networks:
+  default:
