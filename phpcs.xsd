@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="ruleset">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="description" type="xs:string" />
+                <xs:element name="rule">
+                    <xs:complexType>
+                        <xs:attribute name="ref" use="required" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="file" type="xs:string" />
+                <xs:element name="exclude-pattern" maxOccurs="unbounded" type="xs:string" />
+            </xs:sequence>
+            <xs:attribute name="name" use="required" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

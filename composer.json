@@ -1,12 +1,22 @@
 {
-    "name": "laravel/laravel",
+    "name": "fauzanelka/laravel-boilerplate",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "My personal laravel boilerplate.",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "boilerplate"
     ],
     "license": "MIT",
+    "homepage": "https://github.com/fauzanelka/laravel-boilerplate",
+    "authors": [
+        {
+            "name": "Fauzan Elka",
+            "email": "hello@fauzanelka.id",
+            "homepage": "https://fauzanelka.id",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^7.3|^8.0",
         "fideloper/proxy": "^4.4",
@@ -53,6 +63,12 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "lint": [
+            "phpcs --standard=phpcs.xml -p -n"
+        ],
+        "lint:fix": [
+            "phpcbf --standard=phpcs.xml -p -n"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
