@@ -1,8 +1,8 @@
 <?php
 
-namespace DummyNamespace;
+namespace {{ repositoryNamespace }};
 
-class DummyClass
+class {{ repository }}Repository
 {
     /**
      * @return \Illuminate\Database\Query\Builder
@@ -15,7 +15,7 @@ class DummyClass
     /**
      * @param int $id
      * @throws \Throwable
-     * @return \Illuminate\Database\Eloquent\Model
+     * @return \{{ namespacedModel }}
      */
     public function find(int $id)
     {
@@ -26,7 +26,7 @@ class DummyClass
      * @param string $column
      * @param mixed $value
      * @throws \Throwable
-     * @return \Illuminate\Database\Eloquent\Model
+     * @return \{{ namespacedModel }}
      */
     public function findBy(string $column, mixed $value)
     {
@@ -36,7 +36,7 @@ class DummyClass
     /**
      * @param mixed $data
      * @throws \Throwable
-     * @return \Illuminate\Database\Eloquent\Model
+     * @return \{{ namespacedModel }}
      */
     public function create(mixed $data)
     {
@@ -57,7 +57,7 @@ class DummyClass
      * @param int $id
      * @param mixed $data
      * @throws \Throwable
-     * @return \Illuminate\Database\Eloquent\Model
+     * @return \{{ namespacedModel }}
      */
     public function update(int $id, mixed $data)
     {
